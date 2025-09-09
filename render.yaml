@@ -1,0 +1,21 @@
+# render.yaml
+services:
+  # A PostgreSQL database
+  - type: pgsrv
+    name: workflow-db
+    postgresMajorVersion: 15
+
+  # The backend web service
+  - type: web
+    name: workflow-backend
+    env: docker # Use the Dockerfile for building
+    healthCheckPath: / # Render will check this path to see if your app is healthy
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: workflow-db
+          property: connectionString
+      - key: GOOGLE_API_KEY
+        sync: false # Do not sync this secret to Git
+      - key: SERPAPI_API_KEY
+        sync: false # Do not sync this secret to Git
