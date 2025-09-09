@@ -1,6 +1,6 @@
 services:
   # A PostgreSQL database
-  - type: psql # CORRECTED: Changed from 'pgsrv' to 'psql'
+  - type: postgres # FINAL CORRECTION: Changed to 'postgres'
     name: workflow-db
     postgresMajorVersion: 15
 
@@ -18,4 +18,7 @@ services:
         sync: false # Do not sync this secret to Git
       - key: SERPAPI_API_KEY
         sync: false # Do not sync this secret to Git
+
+
+
 
