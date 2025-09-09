@@ -18,15 +18,4 @@ services:
         sync: false # Do not sync this secret to Git
       - key: SERPAPI_API_KEY
         sync: false # Do not sync this secret to Git
-```
 
-### What to Do Now
-
-1.  **Replace the code** in your `render.yaml` file with the corrected version above.
-2.  **Save the file.**
-3.  **Commit and push** this change to your `main` branch on GitHub:
-    ```bash
-    git add render.yaml
-    git commit -m "Fix render.yaml database service type"
-    git push
-    
